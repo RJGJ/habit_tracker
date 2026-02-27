@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Page() {
   return (
     <section>
@@ -9,7 +11,8 @@ export default function Page() {
           repellendus ipsam iusto quis assumenda necessitatibus corrupti nisi ea
           nemo.
         </p>
+        <Link href="/auth/login">Login</Link>
       </div>
     </section>
-  );
+  )
 }
