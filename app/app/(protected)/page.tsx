@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Page() {
   return (
     <section>
-      <div className="container">
+      <div className="container card">
         <h1>Hello World!</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam magni
