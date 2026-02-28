@@ -1,12 +1,13 @@
 import Link from 'next/link'
+import Container from '@/components/global/Container'
 
 export default function Page() {
   return (
     <section>
-      <div className="container">
+      <Container>
         <h1>Login Page</h1>
         <Link href="/">Back to Home</Link>
-      </div>
+      </Container>
     </section>
   )
 }
