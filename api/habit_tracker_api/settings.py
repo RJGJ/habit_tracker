@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Libraries
     "rest_framework",
+    "rest_framework_simplejwt",
+    # Project
     "api",
 ]
 
@@ -135,5 +138,8 @@ AUTH_USER_MODEL = "api.User"
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_ACCESS": [
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
-    ]
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication"
+    ],
 }
