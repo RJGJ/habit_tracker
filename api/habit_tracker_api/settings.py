@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     # Project
-    "api",
+    "api_auth",
 ]
 
 MIDDLEWARE = [
@@ -133,7 +133,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ADDED_SETTINGS
 
-AUTH_USER_MODEL = "api.User"
+AUTH_USER_MODEL = "api_auth.User"
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_ACCESS": [
