@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     # Project
     "api_auth",
+    "habits",
 ]
 
 MIDDLEWARE = [
