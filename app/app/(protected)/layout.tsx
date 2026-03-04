@@ -1,34 +1,14 @@
-import { cookies } from 'next/headers'
-import '../global.scss'
-import { ThemeProvider } from 'next-themes'
+import { auth } from '../api/auth/[...nextauth]/route'
 import { redirect } from 'next/navigation'
-
-const secret = new TextEncoder().encode(process.env.JWT_SECRET)
 
 export default async function ProtectedLayout({
   children
 }: {
   children: React.ReactNode
 }) {
-  const token = (await cookies()).get('access_token')?.value
+  const session = await auth()
 
-  if (!token) redirect('/login')
+  if (!session) redirect('/login')
 
-  return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-    >
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
-  )
+  return children
 }
