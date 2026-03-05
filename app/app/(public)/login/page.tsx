@@ -1,6 +1,6 @@
 import { auth } from '../../api/auth/[...nextauth]/route'
 import { redirect } from 'next/navigation'
-import Container from '@/components/global/Container'
+import Container from '@/components/atoms/Container'
 import LoginForm from './LoginForm'
 
 export default async function Page() {
