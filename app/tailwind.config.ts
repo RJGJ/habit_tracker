@@ -6,7 +6,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: {
+        primary: {
           50: '#e6fef6',
           100: '#c3fce8',
           200: '#8af8d0',
@@ -18,8 +18,13 @@ const config: Config = {
           800: '#065f46',
           900: '#064e3b'
         },
-        darkBg: '#0b0f19', // Vue-style deep navy
-        darkSoft: '#111827'
+        error: '#F87171',
+        darkBg: '#0D1117', // Vue-style deep navy
+        darkSoft: 'rgba(13, 17, 23, 0.5)',
+        foreground: '#F1F5F9'
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'sans-serif']
       }
     }
   },

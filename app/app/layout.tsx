@@ -1,6 +1,12 @@
 import type { Metadata } from 'next'
 import './global.scss'
 import { ThemeProvider } from 'next-themes'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter'
+})
 
 export const metadata: Metadata = {
   title: 'Habit Tracker',
@@ -16,8 +22,9 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
+      className={inter.variable}
     >
-      <body>
+      <body className="font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
