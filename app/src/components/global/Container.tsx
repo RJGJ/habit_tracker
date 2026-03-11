@@ -1,6 +1,16 @@
-export default function Container({ children }: { children: React.ReactNode }) {
+export default function Container({
+  children,
+  maxwidth
+}: {
+  children: React.ReactNode
+  maxwidth?: number
+}) {
+  const maxWidthClass = maxwidth ? `max-w-[${maxwidth}px]` : 'max-w-[1200px]'
   return (
-    <div className="max-w-[1200px] mx-auto border border-red-500 border-dashed">
+    <div
+      className="mx-auto"
+      style={{ maxWidth: maxwidth ? `${maxwidth}px` : '1200px' }}
+    >
       {children}
     </div>
   )
