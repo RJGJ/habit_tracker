@@ -1,20 +1,13 @@
-@use 'tailwindcss/preflight';
-@tailwind utilities;
-
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
-  :root {
-    --bg: 255 255 255;
-    --text: 31 41 55; // gray-800
-  }
-
-  .dark {
-    --bg: 11 15 25; // deep navy (Vue-style)
-    --text: 229 231 235; // gray-200
-  }
+  // .dark {
+  //   --bg: 11 15 25; // deep navy (Vue-style)
+  //   --text: 229 231 235; // gray-200
+  //   --dark-soft: rgba(13, 17, 23, 0.5);
+  // }
 
   body {
     background-color: rgb(var(--bg));
@@ -25,10 +18,10 @@
   }
 }
 
-@layer components {
-  // .card {
-  //   background-color: rgb(var(--bg));
-  //   border-radius: 1rem;
-  //   padding: 1.5rem;
-  // }
-}
+// @layer components {
+//   // .card {
+//   //   background-color: rgb(var(--bg));
+//   //   border-radius: 1rem;
+//   //   padding: 1.5rem;
+//   // }
+// }

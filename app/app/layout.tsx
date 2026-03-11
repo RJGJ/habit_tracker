@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
-import './global.scss'
-import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
+
+import './global.scss'
+import './tailwind.css'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -24,16 +25,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={inter.variable}
     >
-      <body className="font-sans">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
+      <body className="font-sans bg-dark-bg text-foreground">{children}</body>
     </html>
   )
 }
