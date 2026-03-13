@@ -7,6 +7,7 @@ import { loginSchema, type LoginInput } from '@/lib/validations/auth'
 import { ZodError } from 'zod'
 import Card from '@/components/atoms/card'
 import Container from '@/components/global/Container'
+import TextField from '@/components/atoms/TextField'
 
 export default function LoginForm() {
   const router = useRouter()
@@ -81,7 +82,18 @@ export default function LoginForm() {
             {generalError}
           </div>
         )}
-        <div style={{ marginBottom: '1rem' }}>
+        <TextField
+          label="Username"
+          id="username"
+          type="text"
+          name="username"
+          value={formData.username}
+          onChange={handleChange}
+          disabled={isLoading}
+          aria-invalid={!!errors.username}
+          errors={errors.username}
+        />
+        {/* <div style={{ marginBottom: '1rem' }}>
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -97,8 +109,19 @@ export default function LoginForm() {
               {errors.username}
             </p>
           )}
-        </div>
-        <div style={{ marginBottom: '1rem' }}>
+        </div> */}
+        <TextField
+          label="Password"
+          id="password"
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          disabled={isLoading}
+          aria-invalid={!!errors.password}
+          errors={errors.password}
+        />
+        {/* <div style={{ marginBottom: '1rem' }}>
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -114,7 +137,7 @@ export default function LoginForm() {
               {errors.password}
             </p>
           )}
-        </div>
+        </div> */}
         <button
           type="submit"
           disabled={isLoading}
