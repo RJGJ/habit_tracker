@@ -5,9 +5,10 @@ import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { loginSchema, type LoginInput } from '@/lib/validations/auth'
 import { ZodError } from 'zod'
+
 import Card from '@/components/atoms/card'
-import Container from '@/components/global/Container'
 import TextField from '@/components/atoms/TextField'
+import Button, { ButtonVariant } from '@/components/atoms/Button'
 
 export default function LoginForm() {
   const router = useRouter()
@@ -93,23 +94,6 @@ export default function LoginForm() {
           aria-invalid={!!errors.username}
           errors={errors.username}
         />
-        {/* <div style={{ marginBottom: '1rem' }}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            disabled={isLoading}
-            aria-invalid={!!errors.username}
-          />
-          {errors.username && (
-            <p style={{ color: 'red', fontSize: '0.875rem' }}>
-              {errors.username}
-            </p>
-          )}
-        </div> */}
         <TextField
           label="Password"
           id="password"
@@ -121,29 +105,14 @@ export default function LoginForm() {
           aria-invalid={!!errors.password}
           errors={errors.password}
         />
-        {/* <div style={{ marginBottom: '1rem' }}>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            disabled={isLoading}
-            aria-invalid={!!errors.password}
-          />
-          {errors.password && (
-            <p style={{ color: 'red', fontSize: '0.875rem' }}>
-              {errors.password}
-            </p>
-          )}
-        </div> */}
-        <button
+        <Button
+          variant={ButtonVariant.Primary}
           type="submit"
           disabled={isLoading}
+          onClick={() => {}}
         >
           {isLoading ? 'Logging in...' : 'Login'}
-        </button>
+        </Button>
       </form>
     </Card>
   )
