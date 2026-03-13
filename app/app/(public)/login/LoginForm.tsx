@@ -73,56 +73,55 @@ export default function LoginForm() {
   }
 
   return (
-    <Container maxwidth={360}>
-      <Card>
-        <form onSubmit={handleSubmit}>
-          {generalError && (
-            <div style={{ color: 'red', marginBottom: '1rem' }}>
-              {generalError}
-            </div>
-          )}
-          <div style={{ marginBottom: '1rem' }}>
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              disabled={isLoading}
-              aria-invalid={!!errors.username}
-            />
-            {errors.username && (
-              <p style={{ color: 'red', fontSize: '0.875rem' }}>
-                {errors.username}
-              </p>
-            )}
+    <Card>
+      <h2 className="text-center text-[24px] font-bold">Sign in</h2>
+      <form onSubmit={handleSubmit}>
+        {generalError && (
+          <div style={{ color: 'red', marginBottom: '1rem' }}>
+            {generalError}
           </div>
-          <div style={{ marginBottom: '1rem' }}>
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              disabled={isLoading}
-              aria-invalid={!!errors.password}
-            />
-            {errors.password && (
-              <p style={{ color: 'red', fontSize: '0.875rem' }}>
-                {errors.password}
-              </p>
-            )}
-          </div>
-          <button
-            type="submit"
+        )}
+        <div style={{ marginBottom: '1rem' }}>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
             disabled={isLoading}
-          >
-            {isLoading ? 'Logging in...' : 'Login'}
-          </button>
-        </form>
-      </Card>
-    </Container>
+            aria-invalid={!!errors.username}
+          />
+          {errors.username && (
+            <p style={{ color: 'red', fontSize: '0.875rem' }}>
+              {errors.username}
+            </p>
+          )}
+        </div>
+        <div style={{ marginBottom: '1rem' }}>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            disabled={isLoading}
+            aria-invalid={!!errors.password}
+          />
+          {errors.password && (
+            <p style={{ color: 'red', fontSize: '0.875rem' }}>
+              {errors.password}
+            </p>
+          )}
+        </div>
+        <button
+          type="submit"
+          disabled={isLoading}
+        >
+          {isLoading ? 'Logging in...' : 'Login'}
+        </button>
+      </form>
+    </Card>
   )
 }
