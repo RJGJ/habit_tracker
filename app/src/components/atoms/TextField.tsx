@@ -43,7 +43,7 @@ export default function TextField({
         value={value}
         onChange={onChange}
       />
-      {!!errors && <p>{errors}</p>}
+      {!!errors && <p className="text-[12px] text-error font-bold">{errors}</p>}
     </div>
   )
 }

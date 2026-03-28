@@ -63,7 +63,10 @@ export default function LoginForm() {
         const fieldErrors: Record<string, string> = {}
         error.issues.forEach(issue => {
           const path = issue.path.join('.')
-          fieldErrors[path] = issue.message
+
+          if (!fieldErrors[path]) {
+            fieldErrors[path] = issue.message
+          }
         })
         setErrors(fieldErrors)
       } else {
@@ -114,7 +117,7 @@ export default function LoginForm() {
             disabled={isLoading}
             onClick={() => {}}
           >
-            {isLoading ? 'Logging in...' : 'Login'}
+            {isLoading ? 'Logging in...' : 'Sign In'}
           </Button>
         </div>
       </form>
