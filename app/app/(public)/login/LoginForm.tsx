@@ -76,43 +76,47 @@ export default function LoginForm() {
 
   return (
     <Card>
-      <h2 className="text-center text-[24px] font-bold">Sign in</h2>
+      <h2 className="mb-6 text-center text-[24px] font-bold">Sign in</h2>
       <form onSubmit={handleSubmit}>
         {generalError && (
           <div style={{ color: 'red', marginBottom: '1rem' }}>
             {generalError}
           </div>
         )}
-        <TextField
-          label="Username"
-          id="username"
-          type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-          disabled={isLoading}
-          aria-invalid={!!errors.username}
-          errors={errors.username}
-        />
-        <TextField
-          label="Password"
-          id="password"
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          disabled={isLoading}
-          aria-invalid={!!errors.password}
-          errors={errors.password}
-        />
-        <Button
-          variant={ButtonVariant.Primary}
-          type="submit"
-          disabled={isLoading}
-          onClick={() => {}}
-        >
-          {isLoading ? 'Logging in...' : 'Login'}
-        </Button>
+        <div className="flex flex-col gap-4">
+          <TextField
+            label="Username"
+            id="username"
+            type="text"
+            name="username"
+            placeholder="Enter your username"
+            value={formData.username}
+            onChange={handleChange}
+            disabled={isLoading}
+            aria-invalid={!!errors.username}
+            errors={errors.username}
+          />
+          <TextField
+            label="Password"
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            value={formData.password}
+            onChange={handleChange}
+            disabled={isLoading}
+            aria-invalid={!!errors.password}
+            errors={errors.password}
+          />
+          <Button
+            variant={ButtonVariant.Primary}
+            type="submit"
+            disabled={isLoading}
+            onClick={() => {}}
+          >
+            {isLoading ? 'Logging in...' : 'Login'}
+          </Button>
+        </div>
       </form>
     </Card>
   )

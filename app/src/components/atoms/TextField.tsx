@@ -26,9 +26,15 @@ export default function TextField({
   value
 }: TextFieldProps) {
   return (
-    <div>
-      <label htmlFor={id}>{label}</label>
+    <div className="flex flex-col">
+      <label
+        className="mb-2 text-[14px] font-medium"
+        htmlFor={id}
+      >
+        {label}
+      </label>
       <input
+        className="border border-border py-[10px] px-[12px] rounded-lg bg-dark-bg"
         type={type}
         placeholder={placeholder}
         name={name}

@@ -18,6 +18,14 @@
   }
 }
 
+input,
+textarea,
+select {
+  // all: unset;
+  outline: none;
+  box-sizing: border-box;
+}
+
 // @layer components {
 //   // .card {
 //   //   background-color: rgb(var(--bg));

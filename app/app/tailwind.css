@@ -5,6 +5,7 @@
 
 @theme {
   --color-primary: rgb(16, 185, 129); /* #10b981 */
+  --color-border: #3b5e54;
   --color-error: rgb(248, 113, 113); /* #f87171 */
   --color-foreground: rgb(241, 245, 249); /* #f1f5f9 */
   --color-dark-bg: rgb(13, 17, 23); /* #0d1117 */
