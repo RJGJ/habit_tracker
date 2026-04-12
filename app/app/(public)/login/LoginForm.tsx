@@ -9,6 +9,7 @@ import { ZodError } from 'zod'
 import Card from '@/components/atoms/card'
 import TextField from '@/components/atoms/TextField'
 import Button, { ButtonVariant } from '@/components/atoms/Button'
+import { useAuthStore } from '@/store/authStore'
 
 export default function LoginForm() {
   const router = useRouter()
@@ -55,6 +56,7 @@ export default function LoginForm() {
       if (result?.error) {
         setGeneralError('Invalid username or password')
       } else if (result?.ok) {
+        // TODO: fetch user data and set it in the auth store
         router.push('/')
         router.refresh()
       }

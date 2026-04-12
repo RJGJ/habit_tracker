@@ -1,5 +1,6 @@
 'use client'
 
+import Container from '@/components/atoms/Container'
 import { signOut } from 'next-auth/react'
 
 export default function Page() {
@@ -10,7 +11,7 @@ export default function Page() {
 
   return (
     <section>
-      <div className="container card">
+      <Container>
         <h1>Welcome!</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam magni
@@ -19,7 +20,7 @@ export default function Page() {
           nemo.
         </p>
         <button onClick={logout}>Logout</button>
-      </div>
+      </Container>
     </section>
   )
 }
