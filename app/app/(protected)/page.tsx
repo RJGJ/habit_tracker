@@ -1,6 +1,8 @@
 'use client'
 
 import Container from '@/components/atoms/Container'
+import MyLink from '@/components/atoms/MyLink'
+import TopBar from '@/components/organisms/TopBar.'
 import { signOut } from 'next-auth/react'
 
 export default function Page() {
@@ -10,7 +12,8 @@ export default function Page() {
   }
 
   return (
-    <section>
+    <div>
+      <TopBar />
       <Container>
         <h1>Welcome!</h1>
         <p>
@@ -19,8 +22,9 @@ export default function Page() {
           repellendus ipsam iusto quis assumenda necessitatibus corrupti nisi ea
           nemo.
         </p>
+        <MyLink href="/profile">Profile</MyLink>
         <button onClick={logout}>Logout</button>
       </Container>
-    </section>
+    </div>
   )
 }
